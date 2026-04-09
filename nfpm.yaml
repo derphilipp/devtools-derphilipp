@@ -1,0 +1,44 @@
+# =============================================================================
+# nfpm config for devtools-derphilipp
+# Builds a .deb package that installs an opinionated selection of developer
+# tools via mise — designed to be easy to install "just like that".
+#
+# Build: nfpm package --packager deb --target .
+# =============================================================================
+
+name: devtools-derphilipp
+arch: all
+platform: linux
+version: 1.0.0
+version_schema: semver
+
+section: devel
+priority: optional
+
+maintainer: "Philipp Weißmann <mail@philipp-weissmann.de>"
+description: |
+  An opinionated selection of developer & debugging tools, made easy to
+  install "just like that". Installs mise and a curated set of CLI tools
+  (ripgrep, fzf, bat, jq, lazygit, btop, etc.) for the current user.
+vendor: ""
+homepage: ""
+license: MIT
+
+# Dependencies required on the target system
+depends:
+  - curl
+  - bash
+  - git
+
+# Files to include in the package
+contents:
+  # mise.toml is shipped to /usr/share/ and copied to the user's home
+  # by the postinstall script
+  - src: mise_file.toml
+    dst: /usr/share/devtools-derphilipp/mise.toml
+    type: config
+
+# Lifecycle scripts
+scripts:
+  postinstall: scripts/postinstall.sh
+  preremove: scripts/preremove.sh

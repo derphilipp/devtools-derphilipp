@@ -1,0 +1,54 @@
+# =============================================================================
+# devtools-derphilipp — Opinionated developer tool configuration
+# Installed via devtools-derphilipp .deb package
+# =============================================================================
+# This file is installed to ~/.config/mise/config.toml
+# Edit it to add/remove tools, then run: mise install
+# =============================================================================
+
+[tools]
+# --- Search & navigation ---
+fd = "latest"           # Fast alternative to 'find'
+fzf = "latest"          # Fuzzy finder for shell history, files, etc.
+ripgrep = "latest"      # Blazing fast grep (rg)
+
+# --- File viewing & diffing ---
+bat = "latest"          # 'cat' with syntax highlighting
+delta = "latest"        # Better diff / git-diff viewer
+sd = "latest"           # Find and replace, like 'sed' but simpler
+
+# --- Data processing ---
+jq = "latest"           # CLI JSON processor
+
+# --- File watching ---
+viddy = "latest"        # Modern 'watch' replacement with diff mode
+watchexec = "latest"    # Run commands on file changes
+
+# --- File transfer & serving ---
+croc = "latest"         # Send files across the network, peer-to-peer
+rclone = "latest"       # Sync files to/from cloud storage
+
+# --- System monitoring ---
+btop = "latest"         # Modern top/htop with a nice UI
+duf = "latest"          # Disk usage overview (better 'df')
+
+# --- Logs & systemd ---
+lazyjournal = "latest"  # TUI for browsing journalctl logs
+lnav = "latest"         # Log file navigator with filtering and SQL
+
+# --- Git ---
+lazygit = "latest"      # Terminal UI for Git
+
+# --- Terminal & editor ---
+helix = "latest"        # Modern terminal editor focused on speed
+zellij = "latest"       # Terminal multiplexer with tiling support
+vhs = "latest"          # Record and replay terminal sessions
+
+# --- Scripting & automation ---
+gum = "latest"          # Build interactive shell scripts with prompts
+task = "latest"         # Task runner (Makefile alternative, YAML-based)
+
+[settings]
+# Automatically install missing tools when entering a directory
+# that contains a mise config
+auto_install = true
