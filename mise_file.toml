@@ -48,6 +48,10 @@ vhs = "latest"          # Record and replay terminal sessions
 gum = "latest"          # Build interactive shell scripts with prompts
 task = "latest"         # Task runner (Makefile alternative, YAML-based)
 
+"github:owenthereal/upterm" = "latest"
+"github:tmate-io/tmate" = "latest"
+"github:rgwood/systemctl-tui" = "latest"
+
 [settings]
 # Automatically install missing tools when entering a directory
 # that contains a mise config
