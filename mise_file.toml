@@ -48,9 +48,30 @@ vhs = "latest"          # Record and replay terminal sessions
 gum = "latest"          # Build interactive shell scripts with prompts
 task = "latest"         # Task runner (Makefile alternative, YAML-based)
 
-"github:owenthereal/upterm" = "latest"
-"github:tmate-io/tmate" = "latest"
-"github:rgwood/systemctl-tui" = "latest"
+"github:rgwood/systemctl-tui" = "latest"  # Systemctl and journaling made easy
+
+# upterm: Easy remote terminals;
+[tools."github:owenthereal/upterm"] 
+version = "latest"
+
+[tools."github:owenthereal/upterm".platforms]
+linux-x86 =   { asset_pattern = "upterm_linux_386.tar.gz" }
+linux-x64 =   { asset_pattern = "upterm_linux_amd64.tar.gz" }
+linux-arm64 = { asset_pattern = "upterm_linux_arm64.tar.gz" }
+linux-aarch64 = { asset_pattern = "upterm_linux_arm64.tar.gz" }
+linux-armv6 = { asset_pattern = "upterm_linux_armv6.tar.gz" }
+
+# tmate: Easy remote terminals;
+
+[tools."github:tmate-io/tmate"]
+version = "latest"
+
+[tools."github:tmate-io/tmate".platforms]
+linux-x64 =   { asset_pattern = "tmate-*-static-linux-amd64.tar.xz" }
+linux-armv6 = { asset_pattern = "tmate-*-static-linux-arm32v6.tar.xz" }
+linux-armv7 = { asset_pattern = "tmate-*-static-linux-arm32v7.tar.xz" }
+linux-arm64 = { asset_pattern = "tmate-*-static-linux-arm64v8.tar.xz" }
+linux-x86 =   { asset_pattern = "tmate-*-static-linux-i386.tar.xz" }
 
 [settings]
 # Automatically install missing tools when entering a directory
