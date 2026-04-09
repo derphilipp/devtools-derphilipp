@@ -16,29 +16,14 @@ Then open a new shell (or run `source ~/.bashrc`) and verify with `mise list`.
 
 ## What gets installed?
 
-The package installs [mise](https://mise.jdx.dev/) (a polyglot tool manager) and automatically configures the following tools:
-
-| Tool | Description |
-|------|-------------|
-| **ripgrep** (`rg`) | Blazing fast grep |
-| **fzf** | Fuzzy finder for shell history, files, etc. |
-| **jq** | CLI JSON processor |
-| **fd** | Fast alternative to `find` |
-| **bat** | `cat` with syntax highlighting |
-| **delta** | Better diff / git-diff viewer |
-| **lazygit** | Terminal UI for Git |
-| **btop** | Modern system monitor |
-| **watchexec** | File watcher, runs commands on changes |
-| **zellij** | Terminal multiplexer with tiling |
-| **helix** | Modern terminal editor focused on speed |
-| **croc** | Simple tool for sending files across the network |
+The package installs [mise](https://mise.jdx.dev/) (a polyglot tool manager) and automatically configures a variety of cli tools.
 
 ## Project structure
 
 ```
 devtools-deb/
 ├── nfpm.yaml              # nfpm package configuration
-├── mise.toml              # Tool configuration (shipped to target machine)
+├── mise_file.toml         # Tool configuration (shipped to target machine as 'mise.toml')
 ├── build.sh               # Local build script
 ├── scripts/
 │   ├── postinstall.sh     # Runs after installation / upgrade
@@ -125,7 +110,7 @@ The package automatically detects the target user:
 
 ## Customizing tools
 
-The tool list lives in `mise.toml`. Edit before building:
+The tool list lives in `mise_file.toml`. Edit before building:
 
 ```toml
 [tools]
