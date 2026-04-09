@@ -2,6 +2,18 @@
 
 > An opinionated selection of developer & debugging tools, packaged as a `.deb` — easy to install "just like that".
 
+## Quick Install
+
+Paste this into your terminal to download and install the latest release in one step:
+
+```bash
+curl -sL "$(curl -s https://api.github.com/repos/derphilipp/devtools-derphilipp/releases/latest \
+  | grep -oP '"browser_download_url":\s*"\K[^"]+\.deb')" -o /tmp/devtools-derphilipp.deb \
+  && sudo apt install -y /tmp/devtools-derphilipp.deb
+```
+
+Then open a new shell (or run `source ~/.bashrc`) and verify with `mise list`.
+
 ## What gets installed?
 
 The package installs [mise](https://mise.jdx.dev/) (a polyglot tool manager) and automatically configures the following tools:
